@@ -1,0 +1,26 @@
+[general]
+import = [ "tokyo-night.toml" ]
+
+[window]
+decorations = "Buttonless"
+startup_mode = "Maximized"
+opacity = 1.0
+blur = true
+option_as_alt = "Both"
+
+[font]
+size = 13.5
+builtin_box_drawing = false
+
+[font.normal]
+family = "JetBrainsMonoNL Nerd Font"
+style = "Regular"
+
+[env]
+TERM = "xterm-256color"
+
+[colors]
+transparent_background_colors = true
+
+# [colors.primary]
+# background = "#000000"
