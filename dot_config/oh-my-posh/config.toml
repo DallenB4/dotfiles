@@ -1,0 +1,61 @@
+console_title_template = '{{ .PWD }}'
+version = 3
+final_space = true
+
+[transient_prompt]
+  template = '<b>──➤</b> '
+  background = 'transparent'
+  foreground_templates = ['{{if gt .Code 0}}red{{end}}', 'green']
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'path'
+    template = '<b>╭─ </b>'
+    foreground = 'green'
+    background = 'transparent'
+
+	[[blocks.segments]]
+		type = 'python'
+		foreground = 'white'
+		template = '({{.Venv}}) '
+
+	[[blocks.segments]]
+		type = 'path'
+		foreground = 'green'
+		template = '{{ .Path }}'
+		[blocks.segments.properties]
+			display_root = true
+			style = 'folder'
+
+	[[blocks.segments]]
+		type = 'git'
+		foreground = 'blue'
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    template = '{{ .FormattedMs }}'
+    foreground = 'yellow'
+    background = 'transparent'
+    type = 'executiontime'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      threshold = 5000
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '<b>╰─➤</b>'
+    foreground = 'green'
+    background = 'transparent'
+    type = 'text'
